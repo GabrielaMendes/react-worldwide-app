@@ -3,7 +3,7 @@ import PageNav from "../components/PageNav";
 function Home() {
 	return <div>
     <PageNav />
-    <h1>WorldWhise</h1>
+    <h1>WorldWide</h1>
   </div>;
 }
 
