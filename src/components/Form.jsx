@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useUrlPosition } from "../hooks/useUrlPosition";
+import DatePicker from "react-datepicker";
 import Spinner from "./Spinner";
 import Message from "./Message";
 import Button from "./Button";
 import BackButton from "./BackButton";
+import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Form.module.css";
 
 export function convertToEmoji(countryCode) {
@@ -55,6 +57,11 @@ function Form() {
 		fetchCityData();
 	}, [lat, lng]);
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+  }
+
 	if (isLoadingGeocoding) return <Spinner />;
 
 	if (!lat && !lng)
@@ -62,7 +69,7 @@ function Form() {
 	if (geocodingError) return <Message message={geocodingError} />;
 
 	return (
-		<form className={styles.form}>
+		<form className={styles.form} onSubmit={handleSubmit}>
 			<div className={styles.row}>
 				<label htmlFor="cityName">City name</label>
 				<input
@@ -75,11 +82,7 @@ function Form() {
 
 			<div className={styles.row}>
 				<label htmlFor="date">When did you go to {cityName}?</label>
-				<input
-					id="date"
-					onChange={(e) => setDate(e.target.value)}
-					value={date}
-				/>
+        <DatePicker id="date" onChange={date => setDate(date)} selected={date} dateFormat="dd/MM/yyyy" />
 			</div>
 
 			<div className={styles.row}>
