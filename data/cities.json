@@ -35,18 +35,6 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
-    },
-    {
-      "cityName": "Sao Goncalo do Amarante",
-      "country": "Brazil",
-      "emoji": "🇧🇷",
-      "date": "2023-10-17T18:06:36.004Z",
-      "notes": "Went to Taiba beach",
-      "position": {
-        "lat": "-3.601827609610812",
-        "lng": "-38.96850585937501"
-      },
-      "id": 98443198
     }
   ]
 }
